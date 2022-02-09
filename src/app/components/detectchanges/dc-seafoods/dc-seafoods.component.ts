@@ -22,6 +22,7 @@ export class DcSeafoodsComponent implements OnInit {
       'background: tomato; color:white'
     );
     this.seafoods.push(newSeafood);
+    // this.seafoods = [...this.seafoods, newSeafood];
   }
   getPrice(): number {
     return Math.round(Math.random() * 10000) / 100;
