@@ -7,20 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DcFishesComponent implements OnInit {
   fishes = [
-    {
-      name: 'Cod',
-      price: this.getPrice(),
-    },
-
-    {
-      name: 'Permit',
-      price: this.getPrice(),
-    },
-
-    {
-      name: 'Hake',
-      price: this.getPrice(),
-    },
+    { name: 'Cod', price: this.getPrice() },
+    { name: 'Permit', price: this.getPrice() },
+    { name: 'Hake', price: this.getPrice() },
   ];
 
   constructor() {}
@@ -33,8 +22,7 @@ export class DcFishesComponent implements OnInit {
       '%cADD FISH: ' + newFish.name + ' - €' + newFish.price,
       'background: dodgerblue; color:white'
     );
-    // this.fishes.push(newFish);
-    this.fishes = [...this.fishes, newFish];
+    this.fishes.push(newFish);
   }
 
   getPrice(): number {
