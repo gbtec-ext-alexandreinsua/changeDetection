@@ -13,11 +13,7 @@ export class DcSeafoodsComponent implements OnInit {
   ];
   constructor() {}
 
-  ngOnInit(): void {
-    const addNewElement = setTimeout(() => {
-      this.addElement('lobster');
-    }, 3000);
-  }
+  ngOnInit(): void {}
 
   addElement(name: string) {
     const newSeafood = { name, price: this.getPrice() };

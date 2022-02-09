@@ -1,15 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dc-seafoods-child',
   templateUrl: './dc-seafoods-child.component.html',
   styleUrls: ['./dc-seafoods-child.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DcSeafoodsChildComponent implements OnInit {
   @Input() data: { name: string; price: number }[] = [];
