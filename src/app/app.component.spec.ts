@@ -1,17 +1,24 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { HarnessLoader } from '@angular/cdk/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
+const materialModules = [MatMenuModule];
+
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let loader: HarnessLoader;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [...materialModules, NoopAnimationsModule],
+      declarations: [AppComponent],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    loader = TestbedHarnessEnvironment.loader(fixture);
   });
 
   it('should create the app', () => {
@@ -20,16 +27,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'changeDetection'`, () => {
+  it(`should have as title 'Detection change strategies'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('changeDetection');
+    expect(app.title).toEqual('Detection change strategies');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('changeDetection app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Detection change strategies'
+    );
   });
 });

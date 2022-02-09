@@ -1,0 +1,9 @@
+<h2>Fishes list</h2>
+<input
+  #inputFish
+  type="text"
+  placeholder="Add fish"
+  (keyup.enter)="addElement(inputFish.value)"
+/>
+
+<app-dc-fishes-child [data]="fishes"></app-dc-fishes-child>

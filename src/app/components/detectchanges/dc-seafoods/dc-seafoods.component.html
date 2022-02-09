@@ -1,0 +1,8 @@
+<h2>Seafoods list</h2>
+<input
+  #inputSeafood
+  type="text"
+  placeholder="Add seafood"
+  (keyup.enter)="addElement(inputSeafood.value)"
+/>
+<app-dc-seafoods-child [data]="seafoods"></app-dc-seafoods-child>

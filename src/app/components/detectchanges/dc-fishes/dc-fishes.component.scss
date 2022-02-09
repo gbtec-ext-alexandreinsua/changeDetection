@@ -1,0 +1,25 @@
+:host {
+  border: 2px solid dodgerblue;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    font-size: large;
+    width: 75%;
+    padding: 1rem;
+    border: 1px solid dodgerblue;
+    border-radius: 0.5rem;
+    background: #fdfdfd;
+
+    &::placeholder {
+      font-style: oblique;
+    }
+  }
+  app-dc-fishes-child {
+    align-self: start;
+  }
+}
