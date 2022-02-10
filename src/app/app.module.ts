@@ -14,6 +14,7 @@ import { DcFishesComponent } from './components/detectchanges/dc-fishes/dc-fishe
 import { DcMainComponent } from './components/detectchanges/dc-main/dc-main.component';
 import { DcSeafoodsChildComponent } from './components/detectchanges/dc-seafoods-child/dc-seafoods-child.component';
 import { DcSeafoodsComponent } from './components/detectchanges/dc-seafoods/dc-seafoods.component';
+import { RetailpricePipe } from './pipes/retailprice.pipe';
 
 const materialModules = [
   MatButtonModule,
@@ -30,6 +31,7 @@ const materialModules = [
     DcFishesComponent,
     DcSeafoodsChildComponent,
     DcFishesChildComponent,
+    RetailpricePipe,
   ],
   imports: [
     ...materialModules,
