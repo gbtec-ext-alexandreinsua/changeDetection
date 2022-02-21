@@ -22,8 +22,8 @@ export class DcFishesComponent implements OnInit {
       '%cADD FISH: ' + newFish.name + ' - €' + newFish.price,
       'background: dodgerblue; color:white'
     );
-    this.fishes.push(newFish);
-    // this.fishes = [...this.fishes, newFish];
+    // this.fishes.push(newFish);
+    this.fishes = [...this.fishes, newFish];
   }
 
   getPrice(): number {

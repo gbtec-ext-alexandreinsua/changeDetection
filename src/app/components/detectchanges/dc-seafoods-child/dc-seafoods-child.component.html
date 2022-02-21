@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let item of data">
-    {{ item.name }} - € {{ retailPrice(item.price) }}
+  <li *ngFor="let item of seafoods">
+    {{ item.name }} - € {{ retailPrice(item.name, item.price) }}
   </li>
 </ul>

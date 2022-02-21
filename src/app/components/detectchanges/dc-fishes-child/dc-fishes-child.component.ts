@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnInit,
@@ -13,12 +14,16 @@ import {
 })
 export class DcFishesChildComponent implements OnInit {
   @Input() data: { name: string; price: number }[] = [];
-  constructor() {}
+
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(): void {}
 
   retailPrice(price: number) {
     console.log('%cFish: ' + price, 'background: dodgerblue; color:white');
     return Math.round(110 * price) / 100;
+    this.cd.detectChanges();
   }
 }
